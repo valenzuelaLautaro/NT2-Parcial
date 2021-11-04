@@ -23,7 +23,7 @@
               Campo requerido.
             </div>
   
-            <div slot="no-espacios" class="alert alert-danger mt-1">
+            <div slot="sin-espacios" class="alert alert-danger mt-1">
               El campo no puede contener espacios.
             </div>
   
@@ -31,7 +31,7 @@
               Este campo requiere como mínimo {{ nombreMinLength }} caracteres.
             </div>
   
-            <div v-if="formData.nombre.length == nombreMaxLength" class="alert alert-danger mt-1">
+            <div v-if="formData.nombre.length == this.nombreMaxLength" class="alert alert-danger mt-1">
               Este campo acepta como máximo {{ nombreMaxLength }} caracteres.
             </div>
   
@@ -172,7 +172,7 @@
         } else {
           color= 'orange'
         }
-        if(this.formData.input != 0 && this.formData.input > this.sumar()){
+        if(this.formData.input != 0 && this.formData.input < this.sumar()){
           color = 'red'
         }
         return color
